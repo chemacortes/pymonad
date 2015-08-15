@@ -69,11 +69,11 @@ class Monad(Iterable):
 
 
 
-# (Monad m) => [m a] -> m [a]
+# sequence :: (Monad m) => [m a] -> m [a]
 def sequence(ms):
     return Monad(i for m in ms for i in m)
 
-# (Monad m) => (a -> m b) -> [a] -> m [b]
+# mapM :: (Monad m) => (a -> m b) -> [a] -> m [b]
 def mapM(f, xs):
     return sequence(f(i) for i in xs)
 
