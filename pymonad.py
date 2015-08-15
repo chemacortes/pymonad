@@ -196,7 +196,7 @@ m = Just(1).do(
     printM,
     (sumn, -12123),
     mult2,
-    PrintM(fmt="{0} <- Negative number")
+    partial(PrintM, fmt="{0} <- Negative number")
    )
 print(m)
 
